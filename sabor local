@@ -1,0 +1,233 @@
+!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sabor Local | Restaurante Regional</title>
+  <meta name="description" content="Descubra sabores autênticos num restaurante regional vibrante. Ideal para viajantes jovens." />
+  <link rel="canonical" href="https://www.exemplo.com/index.html" />
+  <meta property="og:title" content="Sabor Local | Restaurante Regional" />
+  <meta property="og:description" content="Descubra sabores autênticos num restaurante regional vibrante. Ideal para viajantes jovens." />
+  <style>
+    /* Reset básico */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: sans-serif; line-height: 1.6; background: #fff; color: #222; }
+    header, main, section, footer { padding: 1rem; }
+    header { position: fixed; top: 0; left: 0; right: 0; background: #222; color: #fff; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
+    header h1 { font-size: 1.2rem; }
+    .lang-toggle { background: #fff; color: #222; border: none; padding: 0.5rem; cursor: pointer; }
+    .hero { margin-top: 4rem; padding: 2rem 1rem; background: #f5f5f5; text-align: center; }
+    .hero h2 { font-size: 2rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.1rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; padding: 1rem; }
+    .card { border: 1px solid #ccc; border-radius: 8px; overflow: hidden; background: #fff; }
+    .card img { width: 100%; height: auto; display: block; }
+    .card-content { padding: 1rem; }
+    .card-content h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .card-content p { font-size: 0.95rem; margin-bottom: 0.5rem; }
+    .tags { font-size: 0.8rem; color: #555; margin-bottom: 0.5rem; }
+    .cta { background: #222; color: #fff; padding: 0.5rem; text-align: center; text-decoration: none; display: block; border-radius: 4px; }
+    .cta:focus { outline: 2px solid #00f; }
+	.hero {
+  margin-top: 4rem;
+  padding: 4rem 1rem;
+  background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/33/f9/3c/portugal.jpg?w=1400&h=1400&s=1'); /* Substitui pelo nome da tua imagem */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Camada escura para contraste */
+  z-index: 0;
+}
+
+.hero h2, .hero p {
+  position: relative;
+  z-index: 1;
+}
+    @media (max-width: 400px) {
+      .hero h2 { font-size: 1.5rem; }
+      .card-content h3 { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+<!-- Consentimento de cookies -->
+<div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#222;color:#fff;padding:1rem;display:flex;justify-content:space-between;align-items:center;z-index:9999;">
+  <span id="cookie-text">Este site usa cookies para melhorar a experiência.</span>
+  <button id="cookie-accept" onclick="acceptCookies()" style="background:#ffd700;color:#222;border:none;padding:0.5rem;border-radius:4px;cursor:pointer;">Aceitar</button>
+</div>
+
+<script>
+  function acceptCookies() {
+    // Oculta o banner
+    document.getElementById("cookie-banner").style.display = "none";
+
+    // Carrega o script de análise apenas após consentimento
+    const script = document.createElement("script");
+    script.defer = true;
+
+    // 🔒 Escolhe uma das opções abaixo e remove o comentário da que deseja usar
+
+    // 👉 Plausible (privacidade-friendly)
+    // script.src = "https://plausible.io/js/plausible.js";
+    // script.setAttribute("data-domain", "teusite.com");
+
+    // 👉 Matomo (modo de privacidade)
+    /*
+    script.src = "https://matomo.teusite.com/matomo.js";
+    const tracker = document.createElement("script");
+    tracker.innerHTML = `
+      var _paq = window._paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      _paq.push(['setTrackerUrl', 'https://matomo.teusite.com/matomo.php']);
+      _paq.push(['setSiteId', '1']);
+    `;
+    document.head.appendChild(tracker);
+    */
+
+    // Adiciona o script ao <head>
+    document.head.appendChild(script);
+  }
+</script>
+
+  <header role="banner" aria-label="Cabeçalho principal">
+    <h1>Sabor Local</h1>
+    <button class="lang-toggle" onclick="toggleLang()">EN</button>
+  </header>
+
+  <main role="main" aria-label="Conteúdo principal">
+    <section class="hero" id="hero">
+      <h2 id="hero-title">Sabores autênticos para viajantes curiosos</h2>
+      <p id="hero-desc">Descubra pratos regionais com alma, perfeitos para partilhar e saborear com vista.</p>
+    </section>
+
+    <section class="grid" aria-label="Pratos recomendados">
+      <!-- Card 1 -->
+      <div class="card">
+        <img src="https://feed.continente.pt/media/4cbphet4/ac-orda-alentejana.jpg?anchor=center&mode=crop&width=1200&height=630&rnd=133513628015130000 alt="Imagem do prato Açorda Jovem" />
+        <div class="card-content">
+          <h3 id="card1-title">Açorda Jovem</h3>
+          <p id="card1-desc">Uma versão leve da açorda tradicional, com ervas frescas e ovo escalfado. Ideal para quem quer tradição com frescura.</p>
+          <p class="tags" id="card1-tags">#tradição #vegetariano</p>
+          <p id="card1-info">15 min · €8</p>
+          <a href="#reserva" class="cta" id="card1-cta">Reservar</a>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="card">
+        <img src="https://www.pingodoce.pt/wp-content/uploads/2021/08/cozido-portuguesa-transmontano.jpeg" alt="Imagem do prato Maré Alta" />
+        <div class="card-content">
+          <h3 id="card2-title">Cozido à Portuguesa</h3>
+          <p id="card2-desc">O Cozido à Portuguesa é um prato típico de Portugal que consiste em uma grande variedade de carnes (como carne de vaca, porco, frango e enchidos, como chouriço e morcela), legumes (batatas, cenouras, couve, arroz e feijão) cozidos juntos.</p>
+          <p class="tags" id="card2-tags">#vista #marisco</p>
+          <p id="card2-info">20 min · €12</p>
+          <a href="#reserva" class="cta" id="card2-cta">Reservar</a>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="card">
+        <img src="https://feed.continente.pt/media/h2nhcujt/bacalhau-a-bras.jpg" alt="Imagem do prato Pica-Pau Urbano" />
+        <div class="card-content">
+          <h3 id="card3-title">Bacalhau à Brás</h3>
+          <p id="card3-desc">O Bacalhau à Brás é um dos pratos mais típicos da culinária portuguesa, feito com bacalhau desfiado, batata palha, ovos batidos e cebola. Tudo é misturado e cozido até ficar bem incorporado, criando uma textura macia e saborosa.</p>
+          <p class="tags" id="card3-tags">#aventura #partilha</p>
+          <p id="card3-info">25 min · €10</p>
+          <a href="#reserva" class="cta" id="card3-cta">Reservar</a>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="card">
+        <img src="https://cdn.recipes.lidl/images/pt-PT/Caldo-verde.jpg" alt="Imagem do prato Verde no Prato" />
+        <div class="card-content">
+          <h3 id="card4-title">Caldo Verde</h3>
+          <p id="card4-desc">O Caldo Verde é uma sopa tradicional portuguesa, especialmente popular no Norte do país. Ela é feita com couve-galega (uma variedade de couve portuguesa), batatas, chouriço e alho.</p>
+          <p class="tags" id="card4-tags">#vegano #sustentável</p>
+          <p id="card4-info">10 min · €7</p>
+          <a href="#reserva" class="cta" id="card4-cta">Reservar</a>
+        </div>
+      </div>
+      <!-- Card 5 -->
+      <div class="card">
+        <img src="https://www.apolonia.com/fotos/receitas/ameijoas_bolhao_pato_1350x750px_receita_199974736862d0298b65e74.jpg" alt="Imagem do prato Tacho de Rua" />
+        <div class="card-content">
+          <h3 id="card5-title">Amêijoas à Bulhão Pato</h3>
+          <p id="card5-desc">As Amêijoas à Bulhão Pato são um prato de frutos do mar muito apreciado em Portugal, especialmente nas regiões costeiras. Elas são cozidas em vinho branco, azeite, alho, coentro e limão, criando um molho delicado e saboroso.</p>
+          <p class="tags" id="card5-tags">#rápido #picante</p>
+          <p id="card5-info">15 min · €9</p>
+          <a href="#reserva" class="cta" id="card5-cta">Reservar</a>
+        </div>
+      </div>
+      <!-- Card 6 -->
+      <div class="card">
+        <img src="https://bakeandcakegourmet.com.br/uploads/site/receitas/pastel-de-nata-2-jn3t47mr.jpg" alt="Imagem do prato Doce de Viagem" />
+        <div class="card-content">
+          <h3 id="card6-title">Pastel de Nata</h3>
+          <p id="card6-desc">Sobremesa regional com fruta da época e toque de especiarias. Final perfeito para qualquer refeição.</p>
+          <p class="tags" id="card6-tags">#doce #regional</p>
+          <p id="card6-info">10 min · €5</p>
+          <a href="#reserva" class="cta" id="card6-cta">Reservar</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+<section aria-label="Quiz de recomendação" style="padding:1rem;">
+  <h2 id="quiz-title">Qual é o teu tipo de refeição ideal?</h2>
+  <form id="quiz-form">
+    <label><input type="checkbox" name="mood" value="aventura" /> Algo rápido e saboroso</label><br />
+    <label><input type="checkbox" name="mood" value="tradição" /> Uma receita tradicional e reconfortante</label><br />
+    <label><input type="checkbox" name="mood" value="vista" /> Um prato com sabor a mar</label><br />
+    <label><input type="checkbox" name="mood" value="orçamento" /> Uma experiência gastronómica com ambiente acolhedor</label><br />
+    <button type="button" id="quiz-cta" onclick="recommend()">Ver recomendação</button>
+  </form>
+</section>
+<section aria-label="Rua Augusta" style="padding: 1rem;">
+  <h2>Onde estamos</h2>
+  <p>Visita-nos no coração de Lisboa. Estamos à tua espera com sabores autênticos!</p>
+  <iframe
+    src="https://share.google/a4W9AAjgCw8ZJCdx8"
+    width="100%"
+    height="300"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer"
+    sandbox
+    title="Mapa com localização do restaurante">
+  </iframe>
+</section>
+
+
+<script>
+  // Alternância de idioma PT/EN
+  const i18n = {
+    pt: {
+      heroTitle: "Sabores autênticos para viajantes curiosos",
+      heroDesc: "Descubra pratos regionais com alma, perfeitos para partilhar e saborear com vista.",
+      cards: [
+        {
+		function recommend() {
+  const selected = Array.from(document.querySelectorAll('input[name="mood"]:checked')).map(el => el.value);
+  let target = "card1"; // padrão
+
+  if (selected.includes("aventura")) target = "card3"; // Bacalhau à Brás
+  else if (selected.includes("tradição")) target = "card1"; // Açorda Jovem
+  else if (selected.includes("vista")) target = "card5"; // Amêijoas à Bulhão Pato
+  else if (selected.includes("orçamento")) target = "card4"; // Caldo Verde
+
+  const card = document.getElementById(target);
+  if (card) {
+    card.scrollIntoView({ behavior: "smooth", block: "center" });
+    card.style.boxShadow = "0 0 10px 4px #ffd700"; // destaque visual
+    setTimeout(() => card.style.boxShadow = "", 3000); // remove destaque após 3s
+  }
+}
